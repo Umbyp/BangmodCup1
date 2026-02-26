@@ -38,38 +38,38 @@ const KO_TEMPLATE = [
 ];
 
 const MATCH_SCHEDULE = {
-  19: { matchNo:1,  date:"2026-02-28", dateLabel:"เสาร์ 28 ก.พ.", time:"13:00-14:00" },
-  12: { matchNo:2,  date:"2026-02-28", dateLabel:"เสาร์ 28 ก.พ.", time:"14:10-15:10" },
-  18: { matchNo:3,  date:"2026-02-28", dateLabel:"เสาร์ 28 ก.พ.", time:"15:40-16:40" },
-   3: { matchNo:4,  date:"2026-02-28", dateLabel:"เสาร์ 28 ก.พ.", time:"16:50-17:50" },
-   4: { matchNo:5,  date:"2026-03-01", dateLabel:"อาทิตย์ 1 มี.ค.", time:"13:00-14:00" },
-   7: { matchNo:6,  date:"2026-03-01", dateLabel:"อาทิตย์ 1 มี.ค.", time:"14:10-15:10" },
-  13: { matchNo:7,  date:"2026-03-01", dateLabel:"อาทิตย์ 1 มี.ค.", time:"15:40-16:40" },
-  24: { matchNo:8,  date:"2026-03-01", dateLabel:"อาทิตย์ 1 มี.ค.", time:"16:50-17:50" },
-  20: { matchNo:9,  date:"2026-03-15", dateLabel:"อาทิตย์ 15 มี.ค.", time:"13:00-14:00" },
-   2: { matchNo:10, date:"2026-03-15", dateLabel:"อาทิตย์ 15 มี.ค.", time:"14:10-15:10" },
-  14: { matchNo:11, date:"2026-03-15", dateLabel:"อาทิตย์ 15 มี.ค.", time:"15:40-16:40" },
-   8: { matchNo:12, date:"2026-03-15", dateLabel:"อาทิตย์ 15 มี.ค.", time:"16:50-17:50" },
-  16: { matchNo:13, date:"2026-03-21", dateLabel:"เสาร์ 21 มี.ค.", time:"13:00-14:00" },
-  23: { matchNo:14, date:"2026-03-21", dateLabel:"เสาร์ 21 มี.ค.", time:"14:10-15:10" },
-   5: { matchNo:15, date:"2026-03-21", dateLabel:"เสาร์ 21 มี.ค.", time:"15:40-16:40" },
-   9: { matchNo:16, date:"2026-03-21", dateLabel:"เสาร์ 21 มี.ค.", time:"16:50-17:50" },
-  10: { matchNo:17, date:"2026-03-22", dateLabel:"อาทิตย์ 22 มี.ค.", time:"13:00-14:00" },
-  21: { matchNo:18, date:"2026-03-22", dateLabel:"อาทิตย์ 22 มี.ค.", time:"14:10-15:10" },
-   1: { matchNo:19, date:"2026-03-22", dateLabel:"อาทิตย์ 22 มี.ค.", time:"15:40-16:40" },
-  17: { matchNo:20, date:"2026-03-22", dateLabel:"อาทิตย์ 22 มี.ค.", time:"16:50-17:50" },
-  22: { matchNo:21, date:"2026-03-28", dateLabel:"เสาร์ 28 มี.ค.", time:"13:00-14:00" },
-  11: { matchNo:22, date:"2026-03-28", dateLabel:"เสาร์ 28 มี.ค.", time:"14:10-15:10" },
-   6: { matchNo:23, date:"2026-03-28", dateLabel:"เสาร์ 28 มี.ค.", time:"15:40-16:40" },
-  15: { matchNo:24, date:"2026-03-28", dateLabel:"เสาร์ 28 มี.ค.", time:"16:50-17:50" },
-  100:{ matchNo:25, date:"2026-03-29", dateLabel:"อาทิตย์ 29 มี.ค.", time:"13:00-14:00" },
-  101:{ matchNo:26, date:"2026-03-29", dateLabel:"อาทิตย์ 29 มี.ค.", time:"14:10-15:10" },
-  102:{ matchNo:27, date:"2026-03-29", dateLabel:"อาทิตย์ 29 มี.ค.", time:"15:40-16:40" },
-  103:{ matchNo:28, date:"2026-03-29", dateLabel:"อาทิตย์ 29 มี.ค.", time:"16:50-17:50" },
-  200:{ matchNo:29, date:"2026-04-04", dateLabel:"เสาร์ 4 เม.ย.", time:"16:00-17:00" },
-  201:{ matchNo:30, date:"2026-04-04", dateLabel:"เสาร์ 4 เม.ย.", time:"17:00-18:00" },
-  300:{ matchNo:31, date:"2026-04-05", dateLabel:"อาทิตย์ 5 เม.ย.", time:"16:00-17:00" },
-  301:{ matchNo:32, date:"2026-04-05", dateLabel:"อาทิตย์ 5 เม.ย.", time:"17:00-18:00" },
+  19: { matchNo: 1, date: "2026-02-28", dateLabel: "เสาร์ 28 ก.พ.", time: "13:00-14:00" },
+  12: { matchNo: 2, date: "2026-02-28", dateLabel: "เสาร์ 28 ก.พ.", time: "14:10-15:10" },
+  18: { matchNo: 3, date: "2026-02-28", dateLabel: "เสาร์ 28 ก.พ.", time: "15:40-16:40" },
+  3: { matchNo: 4, date: "2026-02-28", dateLabel: "เสาร์ 28 ก.พ.", time: "16:50-17:50" },
+  4: { matchNo: 5, date: "2026-03-01", dateLabel: "อาทิตย์ 1 มี.ค.", time: "13:00-14:00" },
+  7: { matchNo: 6, date: "2026-03-01", dateLabel: "อาทิตย์ 1 มี.ค.", time: "14:10-15:10" },
+  13: { matchNo: 7, date: "2026-03-01", dateLabel: "อาทิตย์ 1 มี.ค.", time: "15:40-16:40" },
+  24: { matchNo: 8, date: "2026-03-01", dateLabel: "อาทิตย์ 1 มี.ค.", time: "16:50-17:50" },
+  20: { matchNo: 9, date: "2026-03-15", dateLabel: "อาทิตย์ 15 มี.ค.", time: "13:00-14:00" },
+  2: { matchNo: 10, date: "2026-03-15", dateLabel: "อาทิตย์ 15 มี.ค.", time: "14:10-15:10" },
+  14: { matchNo: 11, date: "2026-03-15", dateLabel: "อาทิตย์ 15 มี.ค.", time: "15:40-16:40" },
+  8: { matchNo: 12, date: "2026-03-15", dateLabel: "อาทิตย์ 15 มี.ค.", time: "16:50-17:50" },
+  16: { matchNo: 13, date: "2026-03-21", dateLabel: "เสาร์ 21 มี.ค.", time: "13:00-14:00" },
+  23: { matchNo: 14, date: "2026-03-21", dateLabel: "เสาร์ 21 มี.ค.", time: "14:10-15:10" },
+  5: { matchNo: 15, date: "2026-03-21", dateLabel: "เสาร์ 21 มี.ค.", time: "15:40-16:40" },
+  9: { matchNo: 16, date: "2026-03-21", dateLabel: "เสาร์ 21 มี.ค.", time: "16:50-17:50" },
+  10: { matchNo: 17, date: "2026-03-22", dateLabel: "อาทิตย์ 22 มี.ค.", time: "13:00-14:00" },
+  21: { matchNo: 18, date: "2026-03-22", dateLabel: "อาทิตย์ 22 มี.ค.", time: "14:10-15:10" },
+  1: { matchNo: 19, date: "2026-03-22", dateLabel: "อาทิตย์ 22 มี.ค.", time: "15:40-16:40" },
+  17: { matchNo: 20, date: "2026-03-22", dateLabel: "อาทิตย์ 22 มี.ค.", time: "16:50-17:50" },
+  22: { matchNo: 21, date: "2026-03-28", dateLabel: "เสาร์ 28 มี.ค.", time: "13:00-14:00" },
+  11: { matchNo: 22, date: "2026-03-28", dateLabel: "เสาร์ 28 มี.ค.", time: "14:10-15:10" },
+  6: { matchNo: 23, date: "2026-03-28", dateLabel: "เสาร์ 28 มี.ค.", time: "15:40-16:40" },
+  15: { matchNo: 24, date: "2026-03-28", dateLabel: "เสาร์ 28 มี.ค.", time: "16:50-17:50" },
+  100: { matchNo: 25, date: "2026-03-29", dateLabel: "อาทิตย์ 29 มี.ค.", time: "13:00-14:00" },
+  101: { matchNo: 26, date: "2026-03-29", dateLabel: "อาทิตย์ 29 มี.ค.", time: "14:10-15:10" },
+  102: { matchNo: 27, date: "2026-03-29", dateLabel: "อาทิตย์ 29 มี.ค.", time: "15:40-16:40" },
+  103: { matchNo: 28, date: "2026-03-29", dateLabel: "อาทิตย์ 29 มี.ค.", time: "16:50-17:50" },
+  200: { matchNo: 29, date: "2026-04-04", dateLabel: "เสาร์ 4 เม.ย.", time: "16:00-17:00" },
+  201: { matchNo: 30, date: "2026-04-04", dateLabel: "เสาร์ 4 เม.ย.", time: "17:00-18:00" },
+  300: { matchNo: 31, date: "2026-04-05", dateLabel: "อาทิตย์ 5 เม.ย.", time: "16:00-17:00" },
+  301: { matchNo: 32, date: "2026-04-05", dateLabel: "อาทิตย์ 5 เม.ย.", time: "17:00-18:00" },
 };
 
 const GROUP_COLORS = {
@@ -284,7 +284,11 @@ function MatchesTab({ matches, isAdmin, onEditScore }) {
     byDate[key].push(m);
   });
 
-  const dateOrder = Array.from(new Set(Object.values(MATCH_SCHEDULE).map(s => s.dateLabel)));
+  const dateOrder = Array.from(new Set(
+    Object.values(MATCH_SCHEDULE)
+      .sort((a, b) => a.matchNo - b.matchNo)  // ← เพิ่มบรรทัดนี้
+      .map(s => s.dateLabel)
+  ));
   const sortedDates = Object.keys(byDate).sort((a, b) => dateOrder.indexOf(a) - dateOrder.indexOf(b));
 
   return (
