@@ -165,7 +165,7 @@ function resolveKoMatches(koMatches, standings, groupMatches) {
   return { resolved, allGroupDone };
 }
 
-// ─── UI Components (แก้บั๊กรูปไม่ขึ้นแล้ว) ──────────────────────────────────
+// ─── UI Components ──────────────────────────────────
 const getTeamGradient = name => {
   const g = ["from-orange-500 to-red-700", "from-blue-600 to-indigo-900", "from-emerald-600 to-teal-900", "from-purple-600 to-fuchsia-900", "from-amber-500 to-yellow-800", "from-rose-600 to-pink-900", "from-cyan-600 to-blue-800", "from-slate-500 to-slate-800"];
   let h = 0;
@@ -176,7 +176,6 @@ const getTeamGradient = name => {
 function TeamAvatar({ name, size = "md" }) {
   const [err, setErr] = useState(false);
 
-  // 🌟 บังคับรีเซ็ต Error ใหม่ทุกครั้งที่มีการเปลี่ยนชื่อทีม
   useEffect(() => {
     setErr(false);
   }, [name]);
@@ -276,7 +275,15 @@ function StandingsTab({ standings }) {
 function MatchesTab({ matches, isAdmin, onEditScore }) {
   const [filterGroup, setFilterGroup] = useState("all");
 
-  const filtered = matches.filter(m => filterGroup === "all" || (filterGroup === "ko" ? m.round > 1 : m.group === filterGroup));
+  // 🌟 ส่วนที่เพิ่มขึ้นมา: กรองและสั่งให้เรียงตามเวลา (matchNo)
+  const filtered = matches
+    .filter(m => filterGroup === "all" || (filterGroup === "ko" ? m.round > 1 : m.group === filterGroup))
+    .sort((a, b) => {
+      const matchA = MATCH_SCHEDULE[a.id]?.matchNo || 9999;
+      const matchB = MATCH_SCHEDULE[b.id]?.matchNo || 9999;
+      return matchA - matchB;
+    });
+
   const byDate = {};
   filtered.forEach(m => {
     const key = MATCH_SCHEDULE[m.id]?.dateLabel || "TBD";
@@ -286,7 +293,7 @@ function MatchesTab({ matches, isAdmin, onEditScore }) {
 
   const dateOrder = Array.from(new Set(
     Object.values(MATCH_SCHEDULE)
-      .sort((a, b) => a.matchNo - b.matchNo)  // ← เพิ่มบรรทัดนี้
+      .sort((a, b) => a.matchNo - b.matchNo)
       .map(s => s.dateLabel)
   ));
   const sortedDates = Object.keys(byDate).sort((a, b) => dateOrder.indexOf(a) - dateOrder.indexOf(b));
@@ -332,17 +339,9 @@ function MatchesTab({ matches, isAdmin, onEditScore }) {
                     {m.played ? (
                       <div className="flex flex-col items-center gap-1">
                         <div className="flex items-center gap-2">
-                          {/* คะแนนฝั่ง Home */}
-                          <span className={`text-xl font-black italic leading-none ${hw ? "text-orange-500" : "text-gray-600"}`}>
-                            {m.homeScore}
-                          </span>
-
+                          <span className={`text-xl font-black italic leading-none ${hw ? "text-orange-500" : "text-gray-600"}`}>{m.homeScore}</span>
                           <span className="text-gray-800 text-sm">:</span>
-
-                          {/* คะแนนฝั่ง Away */}
-                          <span className={`text-xl font-black italic leading-none ${aw ? "text-orange-500" : "text-gray-600"}`}>
-                            {m.awayScore}
-                          </span>
+                          <span className={`text-xl font-black italic leading-none ${aw ? "text-orange-500" : "text-gray-600"}`}>{m.awayScore}</span>
                         </div>
                         <Badge className="bg-emerald-500/10 text-emerald-500 border-emerald-500/20 scale-75">Final</Badge>
                       </div>
@@ -411,7 +410,6 @@ function BracketTab({ resolvedKo, isAdmin, onEditScore, allGroupDone }) {
 
       <div className="overflow-x-auto pb-10 no-scrollbar -mx-4 px-4 cursor-grab active:cursor-grabbing">
         <div className="flex gap-8 items-start min-w-[700px] py-4">
-          {/* QF */}
           <div className="flex flex-col gap-6 pt-4">
             <div className="text-[10px] font-black text-gray-600 uppercase text-center mb-2 tracking-widest">Quarter Finals</div>
             <Node match={get(100)} />
@@ -419,13 +417,11 @@ function BracketTab({ resolvedKo, isAdmin, onEditScore, allGroupDone }) {
             <Node match={get(102)} />
             <Node match={get(103)} />
           </div>
-          {/* SF */}
           <div className="flex flex-col gap-24 pt-16">
             <div className="text-[10px] font-black text-gray-600 uppercase text-center mb-2 tracking-widest">Semi Finals</div>
             <Node match={get(200)} />
             <Node match={get(201)} />
           </div>
-          {/* Final */}
           <div className="flex flex-col gap-10 pt-32">
             <div className="text-[10px] font-black text-orange-500 uppercase text-center mb-2 tracking-[0.2em] italic">Championship</div>
             <Node match={get(301)} />
@@ -437,7 +433,6 @@ function BracketTab({ resolvedKo, isAdmin, onEditScore, allGroupDone }) {
         </div>
       </div>
 
-      {/* Prize Card */}
       <div className="bg-gradient-to-br from-[#1a1a1a] to-black border border-white/10 rounded-3xl p-6 shadow-2xl relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 blur-[60px] rounded-full" />
         <h4 className="text-sm font-black text-white uppercase italic tracking-widest mb-4 flex items-center gap-2">
@@ -626,7 +621,6 @@ export default function App() {
                 Save Score
               </button>
 
-              {/* ปุ่ม Reset คะแนน */}
               <button
                 onClick={() => {
                   if (window.confirm("ต้องการล้างคะแนนแมตช์นี้ใช่ไหม?")) {
